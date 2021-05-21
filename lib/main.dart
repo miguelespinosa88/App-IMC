@@ -39,29 +39,29 @@ class IMCState extends State<IMCStateful>{
       double peso_d = double.parse(   peso.text  );
       double altura_d = double.parse(   altura.text  );
       double imc = peso_d / (altura_d * altura_d);
-      if(imc < 16){
-        mensajes = "Delgadez severa (tu IMC = ${imc.toStringAsPrecision(2)})";
+      if(imc<16){
+        mensajes = "Delgadez severa (tu IMC = ${imc.toStringAsPrecision(5)})";
       }
-      if((16 <= imc) || (imc <= 16.99)){
-        mensajes = "Delgadez moderada (tu IMC = ${imc.toStringAsPrecision(2)})";
+      else if((16<=imc) &&(imc<=16.99)){
+        mensajes = "Delgadez moderada (tu IMC = ${imc.toStringAsPrecision(5)})";
       }
-      if((17 <= imc)||(imc <= 18.49)){
-        mensajes = "Delgadez aceptable (tu IMC = ${imc.toStringAsPrecision(2)})";
+      else if((17<=imc)&&(imc<=18.49)){
+        mensajes = "Delgadez aceptable (tu IMC = ${imc.toStringAsPrecision(5)})";
       }
-      if((18.5 <= imc )||(imc <= 24.99)){
-        mensajes = "Normal (tu IMC = ${imc.toStringAsPrecision(2)})";
+      else if((18.5<=imc)&&(imc<=24.99)){
+        mensajes = "Normal (tu IMC = ${imc.toStringAsPrecision(5)})";
       }
-      if((25 <= imc)||(imc <= 29.99)){
-        mensajes = "Pre-obeso (riesgo) (tu IMC = ${imc.toStringAsPrecision(2)})";
+      else if((25<=imc)&&(imc<=29.99)){
+        mensajes = "Pre-obeso (riesgo) (tu IMC = ${imc.toStringAsPrecision(5)})";
       }
-      if((30 <= imc)||(imc <= 34.99)){
-        mensajes = "Obeso tipo I (riesgo moderado) (tu IMC = ${imc.toStringAsPrecision(2)})";
+      else if((30<=imc)&&(imc <=34.99)){
+        mensajes = "Obeso tipo I (riesgo moderado) (tu IMC = ${imc.toStringAsPrecision(5)})";
       }
-      if((35 <= imc)||(imc <= 39.99)){
-        mensajes = "Obeso tipo II (riesgo severo) (tu IMC = ${imc.toStringAsPrecision(2)})";
+      else if((35<=imc)&&(imc<=39.99)){
+        mensajes = "Obeso tipo II (riesgo severo) (tu IMC = ${imc.toStringAsPrecision(5)})";
       }
-      if(40 <= imc){
-        mensajes = "Obeso tipo III (riesgo my severo) (tu IMC = ${imc.toStringAsPrecision(2)})";
+      else if(40 <= imc){ //No funciona
+        mensajes = "Obeso tipo III (riesgo my severo) (tu IMC = ${imc.toStringAsPrecision(5)})";
       }
     });
   }
